@@ -1,0 +1,1020 @@
+Input: id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: id+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: id*id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: id+id*id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: id*id+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [X, T, +], [X, T], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: (id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: (id+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: (id*id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: (id+id*id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: (id*id+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: id+(id*id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: id*(id+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: (id+id)*(id+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: (id*id)+(id*id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [X, T, +], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: (id+id*id)*(id*id+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), X, T, +]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: id+id+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [X, T, +]
+    [X, T], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: id*id*id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *]
+    [X, Y, F], [X, Y, id], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: id+id+id+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [X, T, +]
+    [X, T], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [X, T, +], [X, T], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: id*id*id*id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *]
+    [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: id+id*id+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [X, T, +], [X, T]
+    [X, Y, F], [X, Y, id], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: id*id+id*id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [X, T, +], [X, T], [X, Y, F], [X, Y, id]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: id*(id+id*id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: id+(id*id+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null]
+    [X, Y, )], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: (id+id)*(id*id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: (id*id)*(id+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, Y, F, *], [X, Y, F]
+    [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: ((id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: ((id+id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: ((id*id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null]
+    [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null]
+    [X, Y, )], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: ((id+id)*id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: (id*(id+id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: ((id+id)*(id*id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null]
+    [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null]
+    [X, Y, )], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: (((id)))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null]
+    [X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null]
+    [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null]
+    [X, Y, )], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: (((id+id)))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: ((id+id)*(id+id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: ((id*id+id)*(id+id*id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: id+id+id+id+id+id+id+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [X, T, +]
+    [X, T], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [X, T, +], [X, T], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [X, T, +], [X, T]
+    [X, Y, F], [X, Y, id], [X, Y], [X, null], [X]
+    [X, T, +], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [X, T, +]
+    [X, T], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: id*id*id*id*id*id*id*id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *]
+    [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F]
+    [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *]
+    [X, Y, F], [X, Y, id], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: id+id*id+id*id+id*id+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [X, T, +], [X, T]
+    [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [X, T, +]
+    [X, T], [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *]
+    [X, Y, F], [X, Y, id], [X, Y], [X, null], [X]
+    [X, T, +], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: id*(id+id)*(id+id)*id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: (id+id+id)*(id*id*id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, Y, F, *], [X, Y, F]
+    [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: ((id+id)*(id+id))+((id*id)*(id*id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (]
+    [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id]
+    [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: (id*(id+id*id))+(id*(id*id+id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [X, T, +], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id]
+    [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: ((id+id)*id*(id+id))+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [X, T, +], [X, T], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: id*((id+id)*(id+id*id)+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: (id+id)*(id+id)*(id+id)
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: id*id+id*id+id*id+id*id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [X, T, +], [X, T], [X, Y, F], [X, Y, id]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [X, T, +], [X, T]
+    [X, Y, F], [X, Y, id], [X, Y], [X, Y, F, *], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: ((((id))))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y, id]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, ), X, Y, )]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, )]
+    [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: ((((id+id))))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y, id]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: (((id+id)*(id*id)))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, )]
+    [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: ((id+id*id)*(id*(id+id)))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (]
+    [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null]
+    [X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null]
+    [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null]
+    [X, Y, )], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: id+id
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: (id+id)*(id*id)+id*(id+(id*id))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [X, T, +], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: id*(id+id*(id+id*(id+id*id)))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: ((id+id)*(id*id+(id+id)*(id*id+id)))
+Status: true
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, Y, F, *], [X, Y, ), X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, Y, ), null], [X, Y, ), X, Y, ), X, Y, )], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: +id
+Status: false
+Stack: [
+    [E], [], []
+]
+
+Input: *id
+Status: false
+Stack: [
+    [E], [], []
+]
+
+Input: id+
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X]
+    [null], []
+]
+
+Input: id*
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y], [X, null], [X]
+    [null], []
+]
+
+Input: id++id
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X]
+    [X, T, +], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: id**id
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y], [X, Y, F, *], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: +
+Status: false
+Stack: [
+    [E], [], []
+]
+
+Input: *
+Status: false
+Stack: [
+    [E], [], []
+]
+
+Input: ()
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, )], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: (+id)
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, )], [X, Y], [X, null], [X], [X, T, +]
+    [X, T], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [null], [], []
+]
+
+Input: (*id)
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, )], [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, id]
+    [X, Y], [X, null], [X], [null], []
+    []
+]
+
+Input: id+(
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, ), E, (], [X, Y, ), E], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: id*(
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: (id+id
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: id+id)
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [null]
+    [], []
+]
+
+Input: ((id+id)
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T]
+    [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X]
+    [X, Y, ), X, Y, ), X, T, +], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y]
+    [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y]
+    [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: (id+id))
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, null], [X], [null], []
+    []
+]
+
+Input: id+*id
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X]
+    [], []
+]
+
+Input: id*+id
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y], [X, null], [X]
+    [X, T, +], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [null], []
+]
+
+Input: ++id
+Status: false
+Stack: [
+    [E], [], []
+]
+
+Input: **id
+Status: false
+Stack: [
+    [E], [], []
+]
+
+Input: id++
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X]
+    [X, T, +], [X, T], [X], [null], []
+]
+
+Input: id**
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y], [X, Y, F, *], [X, Y, F]
+    [X, Y], [X, null], [X], [null], []
+]
+
+Input: (id+id)*(
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X], [X, Y, ), null], [X, Y, )]
+    [X, Y], [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, )], [X, Y], [X, null], [X], [null]
+    []
+]
+
+Input: id*((id+id)
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, Y, F, *], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, ), E, (], [X, Y, ), X, Y, ), E], [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F]
+    [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null], [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), X, T, +]
+    [X, Y, ), X, Y, ), X, T], [X, Y, ), X, Y, ), X, Y, F], [X, Y, ), X, Y, ), X, Y, id], [X, Y, ), X, Y, ), X, Y], [X, Y, ), X, Y, ), X, null]
+    [X, Y, ), X, Y, ), X], [X, Y, ), X, Y, ), null], [X, Y, ), X, Y, )], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: )+id
+Status: false
+Stack: [
+    [E], [], []
+]
+
+Input: *)+id
+Status: false
+Stack: [
+    [E], [], []
+]
+
+Input: id+(id*
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, ), E, (], [X, Y, ), E], [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id]
+    [X, Y, ), X, Y], [X, Y, ), X, Y, F, *], [X, Y, ), X, Y, F], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), null], [X, Y, )], [X, Y], [X, null]
+    [X], [null], []
+]
+
+Input: id+id+
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, id], [X, Y]
+    [X, null], [X], [X, T, +], [X, T], [X, Y, F]
+    [X, Y, id], [X, Y], [X, null], [X], [X, T, +]
+    [X, T], [X], [null], []
+]
+
+Input: (id*id))
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, Y, F, *]
+    [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null], [X, Y, ), X]
+    [X, Y, ), null], [X, Y, )], [X, Y], [X, null], [X]
+    [null], [], []
+]
+
+Input: (id+)+id
+Status: false
+Stack: [
+    [E], [X, T], [X, Y, F], [X, Y, ), E, (], [X, Y, ), E]
+    [X, Y, ), X, T], [X, Y, ), X, Y, F], [X, Y, ), X, Y, id], [X, Y, ), X, Y], [X, Y, ), X, null]
+    [X, Y, ), X], [X, Y, ), X, T, +], [X, Y, ), X, T], [X, Y, ), X], [X, Y, ), null]
+    [X, Y, )], [X, Y], [X, null], [X], [X, T, +]
+    [X, T], [X, Y, F], [X, Y, id], [X, Y], [X, null]
+    [X], [null], []
+]
